@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breeds Fetch</title>
+</head>
+<body>
+    <h1>dog breeds list</h1>
+    <ul id="breeds-list"></ul>
+
+    <script>
+        fetch('https://dogapi.dog/api/v2/breeds')
+        .then(response => response.json())
+        .then(data => {
+            data.data.forEach(breed => {
+                const ul = document.createElement("ul");
+
+                ul.innerHTML = `
+                    <a href="profile.html?id=${breed.id}">
+                    ${breed.attributes.name}
+                    </a>
+                `;
+
+                document.getElementById('breeds-list').appendChild(ul);
+            });
+        });
+    </script>
+</body>
+</html>
