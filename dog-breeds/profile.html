@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breed Profile</title>
+</head>
+<body>
+    <h1>Breed Details</h1>
+<section id="breed-details"></section>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    console.log("ID from URL:", id);
+
+    const container = document.getElementById("breed-details");
+
+    fetch("https://dogapi.dog/api/v2/breeds")
+    .then(res => res.json())
+    .then(data => {
+        console.log("API response data:", data);
+
+        const breed = data.data.find(item => item.id === id.toString());
+
+        if (breed) {
+            container.innerHTML = `
+            <h2>${breed.attributes.name}</h2>
+            <p>${breed.attributes.description}</p>
+            `;
+        } else {
+            container.innerHTML = `<p>Breed not found.</p>`;
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+        container.innerHTML = `<p>Failed to load breed details.</p>`;
+    });
+</script>
+</body>
+</html>

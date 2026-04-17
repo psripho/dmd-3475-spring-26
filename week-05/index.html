@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week - 05 functions and the DOM</title>
+
+    <style>
+        h1, h2 {
+            color: firebrick;
+        }
+
+        #div1 {
+            color: navy;
+        }
+
+        #div2 {
+            color: palevioletred;
+        }
+
+        .display-none {
+            display:none-!important;
+        }
+
+        .red-text {
+            color: red;
+            text-decoration: underline;
+            transition: 2s;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1 class="display-none">welcome to week 05</h1>
+    <h2>this is my h2</h2>
+
+    <div id="div1">
+        <p>first div</p>
+    </div>
+    <div id="div2">
+        <h3>this is div 2</h3>
+        <p>second div</p>
+    </div>
+
+    <script>
+        // var numberGrade = prompt("what was your number grade?");
+        //     numberGrade = parseInt(numberGrade);
+
+        // var letterGrade = "A";
+
+        // var nextNumberGrade;
+        // var delta = 0;
+
+        // if (numberGrade < 90 && numberGrade >= 80) {
+        //     letterGrade = "B";
+        //     nextNumberGrade = 90;
+        //     delta = nextNumberGrade - numberGrade;
+        // } else if (numberGrade < 80 && numberGrade >= 70) {
+        //     letterGrade = "C"
+        //     nextNumberGrade = 80;
+        //     delta = nextNumberGrade - numberGrade;
+        // }
+
+        // alert(letterGrade);
+
+        // alert("your number grade is: " + numberGrade);
+        // alert("you are " + delta + " away from the next letter grade");
+
+        function addTen(number) {
+            console.log(number + 10);
+        }
+
+        function calculateLetterGrade(numberGrade, anotherNumber) {
+
+            // this is where the logic to calculate a letter grade goes
+
+            alert(numberGrade)
+            alert(anotherNumber)
+        }
+
+        // calculateLetterGrade(90, 400);
+        // calculateLetterGrade(40, 90);
+
+        addTen(50);
+        addTen(40);
+        addTen(50000);
+        addTen("20");
+
+        var header = document.querySelector("h1");
+            console.log(typeof header);
+            header.innerHTML = "Hello! This is new content!";
+
+            // header.classList.add('display-none');
+
+            var myParagraph = document.querySelector("#div2 p");
+                myParagraph.innerHTML = "something else entirely"
+
+            var myH3 = document.querySelector("#div2 h3");
+                myH3.classList.add("red-text");
+
+    </script>
+</body>
+</html>
