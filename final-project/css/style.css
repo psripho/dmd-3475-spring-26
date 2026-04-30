@@ -1,0 +1,163 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Shadows Into Light Two', sans-serif;
+    background-color: lightskyblue;
+    border: 2px navy double;
+    margin: 0px;
+    padding: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Cormorant', sans-serif;
+    font-weight: bolder;
+}
+
+label {
+    font-family: 'Cormorant', sans-serif;
+    font-size: x-large;
+}
+
+.pp-main {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .pp-main {
+        flex-direction: column;
+    }
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    min-height: calc(100vh - 80px);
+    padding: 15px;
+    /* flex-grow: 2; */
+    justify-content: space-between;
+}
+
+.middle-col {
+    min-height: calc(100vh - 80px);
+    /* flex-grow: 1; */
+}
+
+#background {
+    position: relative;
+    width: 100vh;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.bg1 {
+    opacity: 1;
+}
+
+.bg2 {
+    background-color: black;
+    opacity: 0;
+}
+
+#color-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgb(247, 235, 232); 
+  opacity: 0.3;
+}
+
+#overlay-gif {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(166, 183, 198);
+    align-items: center;
+    padding: 15px;
+    flex-grow: 2;
+  }
+
+  .task-list {
+    background-color: lightgray;
+    padding: 15px;
+    border: 20px white solid;
+    height: calc(100vh - 100px);
+  }
+
+  .task-list input {
+    border: none;
+    border-radius: 0px;
+    min-height: 40px;
+    margin-bottom: 10px;
+  }
+
+  input, button {
+    font-family: 'Cormorant' sans-serif;
+  }
+
+  button {
+    color: white;
+    background-color: black;
+    border: 1px white solid;
+    padding: 0;
+  }
+
+  .filter-active {
+  background-color: darkgrey;
+  color: white;
+}
+
+  #list {
+    background-color: lightgoldenrodyellow;
+  }
+
+  ul li {
+    list-style-type: none;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 10px;;
+    font-family: 'Cormorant', sans-serif;
+    font-size: larger;
+  }
+
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+
+  ul li.checked::before {
+    content: '\2713';
+    border-color: #fff;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
